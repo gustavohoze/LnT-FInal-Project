@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration Form</h1>
+      <form id="registration-form" onsubmit="submitForm()">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" minlength="3" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            pattern="[^@\s]+@[^@\s]+"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="^08\d{8,14}$"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="event">Event:</label>
+          <select id="event" name="event" required>
+            <option value="">Select event</option>
+            <option value="event1">VR Festival</option>
+            <option value="event2">Hardware Festival</option>
+            <option value="event3">AI Festival</option>
+            <option value="event3">Experts Conference</option>
+            <option value="event3">Experts Talkshow</option>
+          </select>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <button type="submit"><a href="index.html">Back</a></button>
+    </div>
+    <script src="script2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="mail.js"></script>
+  </body>
+</html>
